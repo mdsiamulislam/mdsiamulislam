@@ -4,7 +4,7 @@
   <img src="https://readme-typing-svg.herokuapp.com/?lines=Student;Android-Developer;&font=Fira%20Code&center=true&width=380&height=50">
 </p>
 
-<p align="center"><img align="center" alt="Coding" width="250" src="https://avatars.githubusercontent.com/u/68956777?v=4"></p>
+<!-- <p align="center"><img align="center" alt="Coding" width="250" src="https://avatars.githubusercontent.com/u/68956777?v=4"></p> -->
 
 
 <details open>
