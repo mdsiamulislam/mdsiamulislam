@@ -21,9 +21,11 @@ I enjoy building things and learn new technology. Currently, I am pursuing my Ba
 
 
 ### My Stats
-<p><img align="left" src="https://github-readme-stats.vercel.app/api?username=mdsiamulislam&theme=merko">
- <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=mdsiamulislam&theme=merko" alt="mdsiamulislam"  />
 <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=mdsiamulislam&show_icons=true&locale=en&layout=compact" alt="mdsiamulislam" />
+<p><img align="left" src="https://github-readme-stats.vercel.app/api?username=mdsiamulislam&theme=merko">    
+ 
+ <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=mdsiamulislam&theme=merko" alt="mdsiamulislam"  />  
+
 </p>
 
 
