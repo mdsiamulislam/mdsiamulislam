@@ -1,82 +1,85 @@
 <h1 align="center">Hi 👋, I'm Md Siamul Islam Soaib</h1>
-<h3 align="center">Student & software engineer</h3>
+<h3 align="center">Aspiring Software Engineer | CSE Student</h3>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=mdsiamulislam&label=Profile%20views&color=0e75b6&style=flat" alt="mdsiamulislam" />
-</p>
-
-👨‍🎓 **B.Sc. in Computer Science and Engineering** from [Dhaka International University](https://diu.ac)
-
-### About me :eyes:
-I am a hardworking and ambitious individual with a great passion for the software development industry. I am driven, enthusiastic, and passionate about learning and problem-solving. I enjoy building things and learning new technology. Currently, I am pursuing my Bachelor's degree in Computer Science and Engineering at Dhaka International University of Bangladesh.
-
----
-
-### My Stats
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=mdsiamulislam&show_icons=true&locale=en&layout=compact" alt="mdsiamulislam" />
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mdsiamulislam&theme=merko" alt="mdsiamulislam" />
-</p>
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mdsiamulislam&theme=merko" alt="mdsiamulislam" />
+  <img src="https://komarev.com/ghpvc/?username=mdsiamulislam&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
 </p>
 
 ---
 
-### Languages and Tools:
+### 👨‍🎓 About Me
+
+I am a dedicated and passionate Computer Science and Engineering student at [Dhaka International University](https://diu.ac). My focus is on software development, with a keen interest in problem-solving and innovation. I am committed to continuously learning and applying my skills to real-world challenges.
+
+---
+
+### 📈 GitHub Statistics
+
 <p align="center">
-  <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="illustrator" width="40" height="40"/>
-  </a>
-  <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/>
-  </a>
-  <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/>
-  </a>
+  <img src="https://github-readme-stats.vercel.app/api?username=mdsiamulislam&show_icons=true&theme=merko&hide_border=true" alt="GitHub Stats" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mdsiamulislam&theme=merko&hide_border=true" alt="GitHub Streak" />
+</p>
+
+---
+
+### 🛠️ Skills & Tools
+
+<p align="center">
   <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" width="40" height="40"/>
   </a>
   <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" width="40" height="40"/>
   </a>
   <a href="https://www.w3schools.com/js" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="css3" width="40" height="40"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40"/>
   </a>
   <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
+    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="40" height="40"/>
   </a>
   <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>
+    <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Firebase" width="40" height="40"/>
   </a>
   <a href="https://developer.android.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/>
-  </a>
-  <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="Android" width="40" height="40"/>
   </a>
   <a href="https://www.java.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" width="40" height="40"/>
+  </a>
+  <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" width="40" height="40"/>
+  </a>
+  <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noreferrer">
+    <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="Illustrator" width="40" height="40"/>
+  </a>
+  <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
+    <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" width="40" height="40"/>
   </a>
 </p>
 
 ---
 
-### Significant Projects:
-- **[AndroidPixEnc](https://github.com/mdsiamulislam/AndroidPixEnc)**: Image Encryption and Decryption App
-- **[Git Operations](https://github.com/mdsiamulislam/Git-operations)**: Development Tool for Git
-- **[What about C](https://github.com/mdsiamulislam/What-about-C)**: C Programming Language Education GitHub Repository
-- 🌐 **[C Programming Learn](https://cprogramminglearn.netlify.app/)**: Live Website for Learning C Programming
-- **[Full-Stack Development](https://github.com/mdsiamulislam/Full-Stack-Development)**: Full Learning Process and Materials with MERN
+### 🚀 Projects
 
-### Next Target:
-- Deep dive into Java with OOP concepts
+- **[AndroidPixEnc](https://github.com/mdsiamulislam/AndroidPixEnc):** A comprehensive app for image encryption and decryption, utilizing advanced cryptographic algorithms.
+- **[Git Operations](https://github.com/mdsiamulislam/Git-operations):** A toolkit designed to simplify Git processes for developers.
+- **[What about C](https://github.com/mdsiamulislam/What-about-C):** A repository dedicated to teaching and exploring the C programming language.
+- 🌐 **[C Programming Learn](https://cprogramminglearn.netlify.app/):** An interactive platform for learning C programming, featuring tutorials, quizzes, and hands-on exercises.
+- **[Full-Stack Development](https://github.com/mdsiamulislam/Full-Stack-Development):** A complete guide and resource for mastering the MERN stack.
 
 ---
 
-### Social Media:
+### 🎯 Future Goals
+
+- Deepen my expertise in **Java** with a focus on **Object-Oriented Programming (OOP)** principles and practices.
+
+---
+
+### 🌐 Connect with Me
+
 <p align="center">
   <a href="http://sites.google.com/view/mdsiamulislamsoaib" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/Website-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"/>
