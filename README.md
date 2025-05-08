@@ -19,10 +19,6 @@ I am a dedicated and passionate Computer Science and Engineering student at [Dha
   <img src="https://github-readme-stats.vercel.app/api?username=mdsiamulislam&show_icons=true&theme=merko&hide_border=true" alt="GitHub Stats" />
 </p>
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mdsiamulislam&theme=merko&hide_border=true" alt="GitHub Streak" />
-</p>
-
 ---
 
 ### 🛠️ Skills & Tools
