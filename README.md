@@ -1,96 +1,98 @@
-<h1 align="center">Hi 👋, I'm Md Siamul Islam Soaib</h1>
-<h3 align="center">Aspiring Software Engineer | CSE Student</h3>
+<h1 align="center">👋 Hello, I'm Md Siamul Islam Soaib</h1>
+<h3 align="center">🚀 Software Developer | CSE Student | Problem Solver</h3>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=mdsiamulislam&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=mdsiamulislam&label=Profile%20Views&color=blue&style=flat-square" alt="Profile Views" />
 </p>
 
 ---
 
-### 👨‍🎓 About Me
+## 🔧 Tech Stack
 
-I am a dedicated and passionate Computer Science and Engineering student at [Dhaka International University](https://diu.ac). My focus is on software development, with a keen interest in problem-solving and innovation. I am committed to continuously learning and applying my skills to real-world challenges.
+| 🧑‍💻 Programming Languages | 📱 Mobile Development | 🌐 Web Development | 🛠 Tools & Platforms |
+|----------------------------|-----------------------|--------------------|---------------------|
+| <img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white"/> <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/> | <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white"/> <img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white"/> | <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black"/> | <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/> |
 
 ---
 
-### 📈 GitHub Statistics
+## 💼 Experience
+
+### Web Development Intern  
+**Softanglez** | March 2025 - Present  
+
+### Assistant Officer  
+**Islamic Online Madrasah (IOM)** | Sept 2024 - Present
+
+---
+
+## 🎓 Education
+
+**BSc in Computer Science & Engineering**  
+Dhaka International University (2021–2027 expected)  
+Focus: Mobile Development, Software Engineering
+
+---
+
+## 🚀 Projects
+
+### Mobile
+- 🔐 [AndroidPixEnc](https://github.com/mdsiamulislam/AndroidPixEnc)  
+  Image encryption app using pixel manipulation and multiple algorithms.
+
+- 🌐 [Marsus EduVerse](https://github.com/mdsiamulislam/Marsus-EduVerse)  
+  Flutter app for Islamic learning (Books, lectures, blogs).
+
+### Web
+- 📘 [C Programming Learn](https://cprogramminglearn.netlify.app/)  
+  Interactive website for learning C programming.
+- 🌐 [DIU CSE Alumni Website](https://csediualumni.com/)  
+  React/Node.js based alumni portal for Dhaka International University.
+
+### Others
+- 🧠 [What about C](https://github.com/mdsiamulislam/What-about-C)  
+  Collection of C programming topics and solutions.
+
+- 🛠 [Git Operations](https://github.com/mdsiamulislam/Git-operations)  
+  Practice repository for Git commands.
+
+---
+
+## 🏆 Honors & Awards
+
+- **Runner-up** — DIU CPC Fall Fest 2024 Hackathon  
+  Developed a Flutter app for real-time classroom availability, recognized for innovative solution.
+
+---
+
+## 🎯 Goals for 2025
+
+- Master Flutter state management (Riverpod, BLoC)  
+- Learn backend development with Node.js  
+- Contribute to open-source projects  
+- Build & publish 5+ production-ready apps
+
+---
+
+## 🤝 Let's Connect!
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mdsiamulislam&show_icons=true&theme=merko&hide_border=true" alt="GitHub Stats" />
+  <a href="http://sites.google.com/view/mdsiamulislamsoaib">
+    <img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=flat-square&logo=google-chrome&logoColor=white" alt="Portfolio"/>
+  </a>
+  <a href="https://www.linkedin.com/in/mdsiamulislamsoaib">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://codeforces.com/profile/mdsiamulislamsoaib">
+    <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=flat-square&logo=codeforces&logoColor=white" alt="Codeforces"/>
+  </a>
+  <a href="https://github.com/mdsiamulislam">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
 </p>
 
 ---
 
-### 🛠️ Skills & Tools
-
 <p align="center">
-  <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" width="30" height="30"/>
-</a>
-<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="CSS3" width="30" height="30"/>
-</a>
-<a href="https://www.w3schools.com/js" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="30" height="30"/>
-</a>
-<a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="30" height="30"/>
-</a>
-<a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Firebase" width="30" height="30"/>
-</a>
-<a href="https://developer.android.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="Android" width="30" height="30"/>
-</a>
-<a href="https://www.java.com" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" width="30" height="30"/>
-</a>
-<a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" width="30" height="30"/>
-</a>
-<a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="Illustrator" width="30" height="30"/>
-</a>
-<a href="https://www.figma.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" width="30" height="30"/>
-</a>
-<a href="https://dart.dev/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" alt="Dart" width="30" height="30"/>
-</a>
-<a href="https://flutter.dev/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="Flutter" width="30" height="30"/>
-</a>
-
-</p>
-
----
-
-### 🚀 Projects
-
-- **[AndroidPixEnc](https://github.com/mdsiamulislam/AndroidPixEnc):** A comprehensive app for image encryption and decryption, utilizing advanced cryptographic algorithms.
-- **[Git Operations](https://github.com/mdsiamulislam/Git-operations):** A toolkit designed to simplify Git processes for developers.
-- **[What about C](https://github.com/mdsiamulislam/What-about-C):** A repository dedicated to teaching and exploring the C programming language.
-- 🌐 **[C Programming Learn](https://cprogramminglearn.netlify.app/):** An interactive platform for learning C programming, featuring tutorials, quizzes, and hands-on exercises.
-- **[Full-Stack Development](https://github.com/mdsiamulislam/Full-Stack-Development):** A complete guide and resource for mastering the MERN stack.
-
----
-
-### 🎯 Future Goals
-
-- Deepen my expertise in **Java & Flutter** with a focus on **Object-Oriented Programming (OOP)** principles and practices.
-
----
-
-### 🌐 Connect with Me
-
-<p align="center">
-  <a href="http://sites.google.com/view/mdsiamulislamsoaib" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Website-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website"/>
-  </a>
-  <a href="https://www.linkedin.com/in/mdsiamulislamsoaib" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="https://codeforces.com/profile/mdsiamulislamsoaib" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces"/>
-  </a>
+  <img src="https://github-readme-stats.vercel.app/api?username=mdsiamulislam&show_icons=true&theme=radical" alt="GitHub Stats"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mdsiamulislam&theme=radical" alt="GitHub Streak"/>
 </p>
