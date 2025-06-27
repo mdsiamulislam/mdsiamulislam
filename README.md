@@ -16,6 +16,8 @@
 ---
 
 ## 💼 Experience
+### Flutter Developer-Trainee  
+**BDCalling** | Jun 2025 - Present  
 
 ### Web Development Intern  
 **Softanglez** | March 2025 - Present  
