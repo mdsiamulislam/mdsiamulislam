@@ -3,768 +3,1411 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Md Siamul Islam Soaib - Software Developer</title>
+    <title>Md Siamul Islam Soaib - Flutter Developer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      :root {
+        --primary-color: #4f46e5;
+        --secondary-color: #06b6d4;
+        --accent-color: #f59e0b;
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-muted: #64748b;
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --glass-bg: rgba(15, 23, 42, 0.8);
+        --glass-border: rgba(148, 163, 184, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* Animated Background */
+      .animated-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: radial-gradient(
+            ellipse at top,
+            rgba(79, 70, 229, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at bottom,
+            rgba(6, 182, 212, 0.1) 0%,
+            transparent 50%
+          );
+      }
+
+      .floating-shapes {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .shape {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 20s infinite linear;
+      }
+
+      .shape:nth-child(1) {
+        top: 20%;
+        left: 10%;
+        width: 100px;
+        height: 100px;
+        background: var(--gradient-1);
+        border-radius: 50%;
+        animation-delay: 0s;
+      }
+      .shape:nth-child(2) {
+        top: 60%;
+        right: 10%;
+        width: 80px;
+        height: 80px;
+        background: var(--gradient-2);
+        transform: rotate(45deg);
+        animation-delay: -7s;
+      }
+      .shape:nth-child(3) {
+        bottom: 30%;
+        left: 20%;
+        width: 120px;
+        height: 120px;
+        background: var(--gradient-3);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        animation-delay: -14s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        33% {
+          transform: translateY(-30px) rotate(120deg);
+        }
+        66% {
+          transform: translateY(20px) rotate(240deg);
+        }
+      }
+
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-1);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text-primary);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+        background: var(--gradient-1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-content .subtitle {
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+
+      .btn {
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary {
+        background: var(--gradient-1);
+        color: white;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--text-primary);
+        border: 2px solid var(--glass-border);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+      }
+
+      .hero-scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--text-muted);
+        font-size: 2rem;
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+
+      /* Section Styles */
+      .section {
+        padding: 5rem 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-1);
+        border-radius: 2px;
+      }
+
+      /* Glass Card Effect */
+      .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .glass-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(79, 70, 229, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      /* About Section */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: var(--glass-bg);
+        border-radius: 15px;
+        border: 1px solid var(--glass-border);
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        background: var(--gradient-2);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .code-window {
+        background: #1a1a2e;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 1px solid var(--glass-border);
+      }
+
+      .code-header {
+        background: #16213e;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .code-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .code-dot:nth-child(1) {
+        background: #ff5f56;
+      }
+      .code-dot:nth-child(2) {
+        background: #ffbd2e;
+      }
+      .code-dot:nth-child(3) {
+        background: #27ca3f;
+      }
+
+      .code-content {
+        padding: 2rem;
+        font-family: "JetBrains Mono", monospace;
+        color: #64ffda;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      /* Skills Section */
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-category {
+        background: var(--glass-bg);
+        border-radius: 20px;
+        padding: 2rem;
+        border: 1px solid var(--glass-border);
+        transition: all 0.3s ease;
+      }
+
+      .skill-category:hover {
+        transform: translateY(-5px);
+        border-color: rgba(79, 70, 229, 0.3);
+      }
+
+      .skill-category h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .skill-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+      }
+
+      .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .skill-item:hover {
+        transform: translateY(-3px);
+        background: rgba(79, 70, 229, 0.1);
+      }
+
+      .skill-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Experience Section */
+      .timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--gradient-1);
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin: 3rem 0;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .timeline-item.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .timeline-content {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 15px;
+        padding: 2rem;
+        position: relative;
+        width: 45%;
+        transition: all 0.3s ease;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+        margin-left: 55%;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+        margin-right: 55%;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        border-color: rgba(79, 70, 229, 0.3);
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 50%;
+        top: 2rem;
+        width: 16px;
+        height: 16px;
+        background: var(--gradient-1);
+        border: 4px solid var(--bg-primary);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+      }
+
+      .timeline-date {
+        color: var(--accent-color);
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-title {
+        font-size: 1.3rem;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-company {
+        color: var(--secondary-color);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .timeline-description {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* Projects Section */
+      .project-filters {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 0.5rem 1.5rem;
+        background: transparent;
+        border: 2px solid var(--glass-border);
+        border-radius: 25px;
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--gradient-1);
+        border-color: transparent;
+        color: white;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(79, 70, 229, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .project-content {
+        padding: 1.5rem;
+      }
+
+      .project-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .project-description {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .tech-tag {
+        background: rgba(79, 70, 229, 0.2);
+        color: var(--primary-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .project-link {
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .project-link:hover {
+        color: var(--text-primary);
+      }
+
+      /* Contact Integration */
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: var(--glass-bg);
+        border-radius: 10px;
+        border: 1px solid var(--glass-border);
+        text-decoration: none;
+        color: var(--text-secondary);
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-2px);
+        border-color: rgba(79, 70, 229, 0.3);
+        color: var(--text-primary);
+      }
+
+      .contact-icon {
+        font-size: 1.2rem;
+        width: 20px;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 2rem;
+        border-top: 1px solid var(--glass-border);
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 100%;
+          height: 100vh;
+          background: var(--glass-bg);
+          backdrop-filter: blur(20px);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: right 0.3s ease;
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .timeline::before {
+          left: 20px;
+        }
+
+        .timeline-content {
+          width: calc(100% - 60px);
+          margin-left: 60px !important;
+          margin-right: 0 !important;
+        }
+
+        .timeline-dot {
+          left: 20px;
+          transform: none;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .skills-container {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Scroll Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Loading Animation */
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid var(--glass-border);
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="preloader">
-      <div class="loader"></div>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+      <div class="loading-spinner"></div>
     </div>
-    <div class="cursor-glow"></div>
 
-    <div class="particles"></div>
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
 
-    <header>
-      <nav>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
         <div class="logo">Md Siamul Islam Soaib</div>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#honors">Honors</a></li>
-          <li><a href="#leadership">Leadership</a></li>
-          <li><a href="#certifications">Certifications</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
           <i class="fas fa-bars"></i>
-        </div>
+        </button>
       </nav>
     </header>
 
-    <main>
-      <section id="home" class="hero" data-aos="fade-in">
-        <div class="container">
-          <h1 data-aos="fade-down" data-aos-delay="200">
-            Md Siamul Islam Soaib
-          </h1>
-          <p data-aos="fade-up" data-aos-delay="400">
-            "Driven Fresher Embarks on Software Development Journey with
-            Unyielding Determination!"
-          </p>
-          <a
-            href="#contact"
-            class="cta-button"
-            data-aos="fade-up"
-            data-aos-delay="600"
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content fade-in">
+        <h1>Flutter Developer & Problem Solver</h1>
+        <p class="subtitle">
+          Transforming ideas into beautiful, functional mobile applications with
+          2+ years of experience in Flutter development
+        </p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="mailto:mdsiamulislams@gmail.com" class="btn btn-secondary"
             >Get In Touch</a
           >
         </div>
-      </section>
+      </div>
+      <div class="hero-scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
 
-      <section id="about" class="about">
-        <div class="container">
-          <div class="about-content">
-            <div class="about-text">
-              <h2>About Me</h2>
-              <p>
-                Passionate Android App Developer and Computer Science
-                Engineering student specializing in creating innovative and
-                user-friendly mobile applications. With 2 years of experience in
-                the field, I possess a strong foundation in Java programming,
-                XML, and front-end design. Committed to delivering high-quality
-                apps, I combine technical expertise with a deep understanding of
-                user experience to create impactful solutions. Currently
-                pursuing a degree in Computer Science Engineering, I am
-                dedicated to staying updated with the latest industry trends and
-                technologies. Let's connect and collaborate on exciting app
-                development projects!
-              </p>
+    <!-- About Section -->
+    <section id="about" class="section fade-in">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a passionate Flutter Developer and Computer Science Engineering
+            student with a deep love for creating innovative mobile
+            applications. With 2+ years of hands-on experience, I specialize in
+            building user-friendly, performance-optimized apps that solve
+            real-world problems.
+          </p>
+          <p>
+            Currently pursuing my degree in Computer Science Engineering at
+            Dhaka International University, I'm dedicated to staying at the
+            forefront of mobile development technologies and best practices.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-item glass-card">
+              <div class="stat-number">2+</div>
+              <div>Years Experience</div>
             </div>
-            <div class="about-visual">
-              <div class="code-snippet">
-                const developer = {<br />
-                &nbsp;&nbsp;name: Md Siamul Islam Soaib,<br />
-                &nbsp;&nbsp;passion: "coding",<br />
-                &nbsp;&nbsp;coffee: "essential",<br />
-                &nbsp;&nbsp;learning: "always"<br />
-                };
-              </div>
+            <div class="stat-item glass-card">
+              <div class="stat-number">10+</div>
+              <div>Projects Completed</div>
+            </div>
+            <div class="stat-item glass-card">
+              <div class="stat-number">3</div>
+              <div>Technologies Mastered</div>
+            </div>
+            <div class="stat-item glass-card">
+              <div class="stat-number">100%</div>
+              <div>Client Satisfaction</div>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <a href="mailto:mdsiamulislams@gmail.com" class="contact-item">
+              <i class="fas fa-envelope contact-icon"></i>
+              <span>mdsiamulislams@gmail.com</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mdsiamulislamsoaib"
+              target="_blank"
+              class="contact-item"
+            >
+              <i class="fab fa-linkedin contact-icon"></i>
+              <span>LinkedIn Profile</span>
+            </a>
+            <a
+              href="https://github.com/mdsiamulislam"
+              target="_blank"
+              class="contact-item"
+            >
+              <i class="fab fa-github contact-icon"></i>
+              <span>GitHub Portfolio</span>
+            </a>
+            <a
+              href="https://sites.google.com/view/mdsiamulislamsoaib"
+              target="_blank"
+              class="contact-item"
+            >
+              <i class="fas fa-globe contact-icon"></i>
+              <span>Portfolio Site</span>
+            </a>
+          </div>
+        </div>
+        <div class="code-window">
+          <div class="code-header">
+            <div class="code-dot"></div>
+            <div class="code-dot"></div>
+            <div class="code-dot"></div>
+          </div>
+          <div class="code-content">
+            const developer = {<br />
+            &nbsp;&nbsp;name: "Md Siamul Islam Soaib",<br />
+            &nbsp;&nbsp;role: "Flutter Developer",<br />
+            &nbsp;&nbsp;location: "Dhaka, Bangladesh",<br />
+            &nbsp;&nbsp;experience: "2+ years",<br />
+            &nbsp;&nbsp;specialties: [<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"Mobile App Development",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"Flutter & Dart",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"Firebase Integration",<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;"RESTful APIs"<br />
+            &nbsp;&nbsp;],<br />
+            &nbsp;&nbsp;currentStatus: "Open to opportunities",<br />
+            &nbsp;&nbsp;passion: "Building amazing user experiences"<br />
+            };
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section fade-in">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Programming Languages</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">🎯</div>
+              <div>Dart</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">⚡</div>
+              <div>JavaScript</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">☕</div>
+              <div>Java</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">🔥</div>
+              <div>C</div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="skills" class="skills-section">
-        <div class="container">
-          <h2>Technical Skills</h2>
-
-          <h3
-            style="
-              text-align: center;
-              color: #00ffff;
-              margin-top: 40px;
-              margin-bottom: 20px;
-            "
-          >
-            Programming Languages
-          </h3>
-          <div class="skills">
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png"
-                alt="Dart Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Dart</div>
+        <div class="skill-category">
+          <h3><i class="fas fa-mobile-alt"></i> Frameworks & Tools</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">📱</div>
+              <div>Flutter</div>
             </div>
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
-                alt="JavaScript Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">JavaScript</div>
+            <div class="skill-item">
+              <div class="skill-icon">⚛️</div>
+              <div>React.js</div>
             </div>
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
-                alt="Java Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Java</div>
+            <div class="skill-item">
+              <div class="skill-icon">🌐</div>
+              <div>Node.js</div>
             </div>
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg"
-                alt="C Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">C</div>
-            </div>
-          </div>
-
-          <h3
-            style="
-              text-align: center;
-              color: #00ffff;
-              margin-top: 40px;
-              margin-bottom: 20px;
-            "
-          >
-            Frameworks & Libraries
-          </h3>
-          <div class="skills">
-            <div class="skill-tag">
-              <img
-                src="https://img.icons8.com/color/512/flutter.png"
-                alt="Flutter Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Flutter</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                alt="React.js Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">React.js</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg"
-                alt="Bootstrap Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Bootstrap</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
-                alt="Node.js Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Node.js (Express)</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
-                alt="Firebase Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Firebase</div>
-            </div>
-          </div>
-
-          <h3
-            style="
-              text-align: center;
-              color: #00ffff;
-              margin-top: 40px;
-              margin-bottom: 20px;
-            "
-          >
-            Development Tools
-          </h3>
-          <div class="skills">
-            <div class="skill-tag">
-              <img
-                src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
-                alt="Git Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Git/GitHub</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://i0.wp.com/www.returngis.net/wp-content/uploads/2021/06/New-postman.png"
-                alt="Postman Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Postman</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://www.webomates.com/wp-content/uploads/2020/05/continuous-testing-1-1024x507.png"
-                alt="CI/CD Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">CI/CD</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1200px-Figma-logo.svg.png"
-                alt="Figma Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Figma</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/2101px-Adobe_XD_CC_icon.svg.png"
-                alt="Adobe Suite Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Adobe XD</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://logos-world.net/wp-content/uploads/2020/02/Canva-New-Logo.png"
-                alt="Canva Logo"
-                class="skill-logo"
-              />
-              <div class="skill-name">Canva</div>
-            </div>
-          </div>
-
-          <h3
-            style="
-              text-align: center;
-              color: #00ffff;
-              margin-top: 40px;
-              margin-bottom: 20px;
-            "
-          >
-            Other Skills
-          </h3>
-          <div class="skills">
-            <div class="skill-tag">
-              <img
-                src="https://apps.odoo.com/web/image/loempia.module/19345/icon_image?unique=5c27382"
-                alt="RESTful API Integration"
-                class="skill-logo"
-              />
-              <div class="skill-name">RESTful API Integration</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://cdn-icons-png.flaticon.com/256/2504/2504209.png"
-                alt="Responsive Web Design"
-                class="skill-logo"
-              />
-              <div class="skill-name">Responsive Design</div>
-            </div>
-            <div class="skill-tag">
-              <img
-                src="https://cdn-icons-png.freepik.com/256/10838/10838381.png"
-                alt="Technical Writing"
-                class="skill-logo"
-              />
-              <div class="skill-name">Technical Writing</div>
+            <div class="skill-item">
+              <div class="skill-icon">🔥</div>
+              <div>Firebase</div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="experience" class="experience">
-        <div class="container">
-          <h2>Work Experience</h2>
-          <div class="work-experience-timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-date">June 2025 - Present</div>
-                <div class="timeline-title">Flutter Developer</div>
-                <div class="timeline-company">Bdcalling IT Ltd.</div>
-                <div class="timeline-description">
-                  Working as a Flutter Developer in the Al Team.
-                </div>
-              </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-tools"></i> Development Tools</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">🔧</div>
+              <div>Git/GitHub</div>
             </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-date">September 2024 - Present</div>
-                <div class="timeline-title">Assistant Officer</div>
-                <div class="timeline-company">
-                  Islamic Online Madrasah - IOM
-                </div>
-                <div class="timeline-description">
-                  Join As a support handlers & student management
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon">📮</div>
+              <div>Postman</div>
             </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-date">March 2025 - July 2025</div>
-                <div class="timeline-title">Web Development Intern</div>
-                <div class="timeline-company">Softanglez</div>
-                <div class="timeline-description">
-                  Contributed to the DIU CSE Alumni website project and gained
-                  hands-on web development experience.
-                </div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon">🎨</div>
+              <div>Figma</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">📱</div>
+              <div>Adobe XD</div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="education" class="education timeline-section">
-        <div class="container">
-          <h2>Education</h2>
-          <div class="hybrid-timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-date">June 2023 - December 2027</div>
-                <div class="timeline-title">
-                  Bachelor's degree, Computer Science
-                </div>
-                <div class="timeline-company">
-                  Dhaka International University
-                </div>
-              </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-rocket"></i> Other Expertise</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">🌐</div>
+              <div>RESTful APIs</div>
             </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-date">June 2020 - November 2022</div>
-                <div class="timeline-title">
-                  Higher secondary school certificate, Science
-                </div>
-                <div class="timeline-company">Govt. M. M. Ali College</div>
-              </div>
+            <div class="skill-item">
+              <div class="skill-icon">📱</div>
+              <div>Responsive Design</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">✍️</div>
+              <div>Technical Writing</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">⚡</div>
+              <div>CI/CD</div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="honors" class="experience timeline-section">
-        <div class="container">
-          <h2>Honors & Awards</h2>
-          <div class="horizontal-timeline honors-timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-date">Fall Fest 2024</div>
-                <div class="timeline-title">Hackathon's runner-up</div>
-                <div class="timeline-company">DIU CPC</div>
-                <div class="timeline-description">
-                  Developed a mobile application using Flutter to address a
-                  real-world university problem: checking classroom availability
-                  in real-time. Successfully implemented an efficient solution,
-                  earning recognition as the runner-up in the competition.
-                </div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-date">2023</div>
-                <div class="timeline-title">
-                  Intra-University Programming Contest
-                </div>
-                <div class="timeline-company">DIU</div>
-                <div class="timeline-description">
-                  Participated in the intra-university programming contest,
-                  solving complex algorithmic problems under pressure.
-                </div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-date">2022</div>
-                <div class="timeline-title">National ICT Olympiad</div>
-                <div class="timeline-company">Bangladesh ICT Ministry</div>
-                <div class="timeline-description">
-                  Represented my college in the National ICT Olympiad,
-                  showcasing my skills in information and communication
-                  technology.
-                </div>
-              </div>
+    <!-- Experience Section -->
+    <section id="experience" class="section fade-in">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">June 2025 - Present</div>
+            <div class="timeline-title">Flutter Developer</div>
+            <div class="timeline-company">Bdcalling IT Ltd.</div>
+            <div class="timeline-description">
+              Working as a Flutter Developer in the AI Team, developing
+              cutting-edge mobile applications with artificial intelligence
+              integration.
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="leadership" class="experience timeline-section">
-        <div class="container">
-          <h2>Leadership & Extracurricular Activities</h2>
-          <div class="horizontal-timeline leadership-timeline">
-            <div class="horizontal-timeline">
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <div class="timeline-date">Feb 2024 - Present</div>
-                  <div class="timeline-title">Executive Member</div>
-                  <div class="timeline-company">
-                    DIU Computer Programming Club
-                  </div>
-                  <div class="timeline-description">
-                    Organized 5+ event with 500+ participant turnout Mentored
-                    10+ juniors in Development
-                  </div>
-                </div>
-              </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">September 2024 - Present</div>
+            <div class="timeline-title">Assistant Officer</div>
+            <div class="timeline-company">Islamic Online Madrasah - IOM</div>
+            <div class="timeline-description">
+              Managing student support and administrative operations, ensuring
+              smooth educational experiences for online learners.
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="certifications" class="experience timeline-section">
-        <div class="container">
-          <h2>Certifications</h2>
-          <div class="certifications-carousel">
-            <div class="carousel-slides">
-              <div class="carousel-slide active">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Certificate+1"
-                  alt="Certificate 1"
-                />
-                <h3>Master Git and Github - Beginner to Expert</h3>
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Certificate+2"
-                  alt="Certificate 2"
-                />
-                <h3>সহজ ভাষায় C Programming</h3>
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Certificate+3"
-                  alt="Certificate 3"
-                />
-                <h3>Master HTML and CSS by building real world projects</h3>
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Certificate+4"
-                  alt="Certificate 4"
-                />
-                <h3>Training of Teachers</h3>
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Certificate+5"
-                  alt="Certificate 5"
-                />
-                <h3>Robotic Camp -2023</h3>
-              </div>
-            </div>
-            <button class="carousel-prev">&#10094;</button>
-            <button class="carousel-next">&#10095;</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="projects">
-        <div class="container">
-          <h2>Featured Projects</h2>
-          <div class="project-filters">
-            <button class="filter-button active" data-filter="all">All</button>
-            <button class="filter-button" data-filter="mobile-app">
-              Mobile Apps
-            </button>
-            <button class="filter-button" data-filter="web-app">
-              Web Apps
-            </button>
-            <button class="filter-button" data-filter="desktop-app">
-              Desktop Apps
-            </button>
-          </div>
-          <div class="project-grid">
-            <div class="project-card mobile-app">
-              <img
-                src="https://i.ibb.co/2DS2JwS/cover.jpg"
-                alt="IOM Daily Azkar"
-                class="project-cover"
-              />
-              <h3>IOM Daily Azkar</h3>
-              <p>
-                IOM Daily Azkar is a comprehensive mobile application designed
-                to help Muslims seamlessly integrate essential Azkar
-                (remembrance of Allah) and Duas (supplications) into their daily
-                lives. Our app provides a user-friendly and feature-rich
-                platform to enhance your spiritual journey.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Flutter</span>
-                <span class="tech-tag">Firebase</span>
-                <span class="tech-tag">Provider</span>
-                <span class="tech-tag">REST API</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.proappsbuild.iomdailyazkar"
-                  class="project-link"
-                  target="_blank"
-                  >Play Store</a
-                >
-              </div>
-            </div>
-
-            <div class="project-card mobile-app">
-              <img
-                src="https://i.ibb.co/RT2VZGXP/68747470733a2f2f692e706f7374696d672e63632f53734b366744334a2f4d61727375732d4564752d56657273652d636f76.png"
-                alt="Marsus EduVerse"
-                class="project-cover"
-              />
-              <h3>Marsus EduVerse</h3>
-              <p>
-                Marsus EduVerse is an all-in-one Islamic digital platform
-                designed to make learning engaging and meaningful. From comics
-                to scholarly lectures, it offers diverse content to strengthen
-                faith and knowledge for all ages.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Flutter</span>
-                <span class="tech-tag">Firebase</span>
-                <span class="tech-tag">Provider</span>
-                <span class="tech-tag">REST API</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.proappsbuild.marsuseduverse"
-                  class="project-link"
-                  target="_blank"
-                  >Play Store</a
-                >
-              </div>
-            </div>
-<!--
-            <div class="project-card web-app">
-              <img
-                src="https://via.placeholder.com/350x200?text=DIU+Alumni+Website"
-                alt="DIU CSE Alumni Website"
-                class="project-cover"
-              />
-              <h3>DIU CSE Alumni Website</h3>
-              <p>
-                Official portal for DIU CSE alumni to share updates and network.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">MongoDB</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://diu-alumni-network.vercel.app/"
-                  class="project-link"
-                  target="_blank"
-                  >Live Demo</a
-                >
-              </div>
-            </div>
-
-            <div class="project-card desktop-app">
-              <img
-                src="https://via.placeholder.com/350x200?text=AndroidPixEnc+Software"
-                alt="AndroidPixEnc"
-                class="project-cover"
-              />
-              <h3>AndroidPixEnc</h3>
-              <p>Image encryption tool using pixel manipulation.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">Encryption</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/mdsiamulislam/AndroidPixEnc"
-                  class="project-link"
-                  target="_blank"
-                  >GitHub</a
-                >
-              </div>
-        -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">March 2025 - July 2025</div>
+            <div class="timeline-title">Web Development Intern</div>
+            <div class="timeline-company">Softanglez</div>
+            <div class="timeline-description">
+              Contributed to the DIU CSE Alumni website project, gaining
+              valuable hands-on web development experience and collaborating
+              with senior developers.
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="contact" class="contact">
-        <div class="container">
-          <div class="contact-content">
-            <h2>Let's Connect</h2>
-            <p>
-              I'm always interested in new opportunities and collaborations.
-              Feel free to reach out!
+      <!-- Education Section -->
+      <h2 class="section-title" style="margin-top: 4rem">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">June 2023 - December 2027</div>
+            <div class="timeline-title">Bachelor's in Computer Science</div>
+            <div class="timeline-company">Dhaka International University</div>
+            <div class="timeline-description">
+              Currently pursuing my undergraduate degree with focus on software
+              engineering, mobile app development, and emerging technologies.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">June 2020 - November 2022</div>
+            <div class="timeline-title">
+              Higher Secondary Certificate in Science
+            </div>
+            <div class="timeline-company">Govt. M. M. Ali College</div>
+            <div class="timeline-description">
+              Completed higher secondary education with strong foundation in
+              mathematics, physics, and computer science.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Awards & Achievements -->
+      <h2 class="section-title" style="margin-top: 4rem">Honors & Awards</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3><i class="fas fa-trophy"></i> Fall Fest 2024</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem">
+            DIU CPC - Hackathon Runner-up
+          </p>
+          <div class="timeline-description">
+            Developed a mobile application using Flutter to address classroom
+            availability tracking in real-time, earning recognition as runner-up
+            in the university hackathon.
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Programming Contest</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem">
+            DIU - 2023
+          </p>
+          <div class="timeline-description">
+            Participated in the intra-university programming contest, solving
+            complex algorithmic problems under competitive pressure.
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-medal"></i> ICT Olympiad</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem">
+            Bangladesh ICT Ministry - 2022
+          </p>
+          <div class="timeline-description">
+            Represented my college in the National ICT Olympiad, showcasing
+            skills in information and communication technology at the national
+            level.
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership -->
+      <h2 class="section-title" style="margin-top: 4rem">
+        Leadership & Activities
+      </h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-date">Feb 2024 - Present</div>
+            <div class="timeline-title">Executive Member</div>
+            <div class="timeline-company">DIU Computer Programming Club</div>
+            <div class="timeline-description">
+              Organized 5+ events with 500+ participant turnout and mentored 10+
+              junior students in development practices and programming
+              fundamentals.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section fade-in">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">
+          All Projects
+        </button>
+        <button class="filter-btn" data-filter="mobile-app">Mobile Apps</button>
+        <button class="filter-btn" data-filter="web-app">Web Apps</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card mobile-app">
+          <img
+            src="https://i.ibb.co/2DS2JwS/cover.jpg"
+            alt="IOM Daily Azkar"
+            class="project-image"
+          />
+          <div class="project-content">
+            <h3 class="project-title">IOM Daily Azkar</h3>
+            <p class="project-description">
+              A comprehensive mobile application designed to help Muslims
+              integrate essential Azkar and Duas into their daily lives with a
+              user-friendly interface and rich features.
             </p>
-            <form class="contact-form">
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <textarea placeholder="Your Message" rows="5" required></textarea>
-              <button type="submit" class="cta-button">Send Message</button>
-            </form>
-            <div class="contact-links">
-              <a href="mailto:mdsiamulislams@gmail.com" class="contact-link">
-                📧 Email
-              </a>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Provider</span>
+              <span class="tech-tag">REST API</span>
+            </div>
+            <div class="project-links">
               <a
-                href="https://www.linkedin.com/in/mdsiamulislamsoaib"
-                class="contact-link"
+                href="https://play.google.com/store/apps/details?id=com.proappsbuild.iomdailyazkar"
+                target="_blank"
+                class="project-link"
               >
-                💼 LinkedIn
-              </a>
-              <a href="https://github.com/mdsiamulislam" class="contact-link">
-                🐙 GitHub
-              </a>
-              <a
-                href="https://sites.google.com/view/mdsiamulislamsoaib"
-                class="contact-link"
-              >
-                🌐 Portfolio
+                <i class="fab fa-google-play"></i> Play Store
               </a>
             </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <footer>
-      <p>&copy; 2025 Md Siamul Islam Soaib. All rights reserved.</p>
+        <div class="project-card mobile-app">
+          <img
+            src="https://i.ibb.co/RT2VZGX/68747470733a2f2f692e706f7374696d672e63632f53734b366744334a2f4d61727375732d4564752d56657273652d636f76.png"
+            alt="Marsus EduVerse"
+            class="project-image"
+          />
+          <div class="project-content">
+            <h3 class="project-title">Marsus EduVerse</h3>
+            <p class="project-description">
+              An all-in-one Islamic digital platform featuring diverse content
+              from comics to scholarly lectures, designed to make learning
+              engaging and meaningful for all ages.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Provider</span>
+              <span class="tech-tag">REST API</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.proappsbuild.marsuseduverse"
+                target="_blank"
+                class="project-link"
+              >
+                <i class="fab fa-google-play"></i> Play Store
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card web-app" style="display: none">
+          <div
+            class="project-image"
+            style="
+              background: var(--gradient-1);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: white;
+              font-size: 1.2rem;
+            "
+          >
+            DIU Alumni Portal
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">DIU CSE Alumni Website</h3>
+            <p class="project-description">
+              Official portal developed during internship for DIU CSE alumni to
+              share updates, network, and stay connected with the university
+              community.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Express</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">
+                <i class="fas fa-globe"></i> Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <h2 class="section-title" style="margin-top: 4rem">Certifications</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3><i class="fas fa-certificate"></i> Recent Certifications</h3>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+              margin-top: 1rem;
+            "
+          >
+            <div
+              style="
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+              "
+            >
+              <strong>Master Git and Github - Beginner to Expert</strong>
+              <p style="color: var(--text-secondary); margin-top: 0.5rem">
+                Version control and collaborative development
+              </p>
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+              "
+            >
+              <strong>সহজ ভাষায় C Programming</strong>
+              <p style="color: var(--text-secondary); margin-top: 0.5rem">
+                C programming fundamentals in Bengali
+              </p>
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+              "
+            >
+              <strong
+                >Master HTML and CSS by building real world projects</strong
+              >
+              <p style="color: var(--text-secondary); margin-top: 0.5rem">
+                Web development fundamentals
+              </p>
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+              "
+            >
+              <strong>Training of Teachers</strong>
+              <p style="color: var(--text-secondary); margin-top: 0.5rem">
+                Educational methodology and training
+              </p>
+            </div>
+            <div
+              style="
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+              "
+            >
+              <strong>Robotic Camp - 2023</strong>
+              <p style="color: var(--text-secondary); margin-top: 0.5rem">
+                Robotics and automation workshop
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        &copy; 2025 Md Siamul Islam Soaib. All rights reserved. Built with
+        passion and dedication.
+      </p>
     </footer>
 
     <script>
-      // Create floating particles
-      function createParticles() {
-        const particlesContainer = document.querySelector(".particles");
-        const particleCount = 50;
+      // Loading screen
+      window.addEventListener("load", () => {
+        const loading = document.getElementById("loading");
+        setTimeout(() => {
+          loading.style.opacity = "0";
+          setTimeout(() => (loading.style.display = "none"), 500);
+        }, 1000);
+      });
 
-        for (let i = 0; i < particleCount; i++) {
-          const particle = document.createElement("div");
-          particle.className = "particle";
-          particle.style.left = Math.random() * 100 + "%";
-          particle.style.top = Math.random() * 100 + "%";
-          particle.style.animationDelay = Math.random() * 6 + "s";
-          particle.style.animationDuration = Math.random() * 3 + 3 + "s";
-          particlesContainer.appendChild(particle);
-        }
-      }
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
 
-      // Create hero particles
-      function createHeroParticles() {
-        const heroParticlesContainer =
-          document.querySelector(".hero-particles");
-        const particleCount = 10; // Fewer particles for the hero section
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        const icon = mobileMenuBtn.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+      });
 
-        for (let i = 0; i < particleCount; i++) {
-          const particle = document.createElement("div");
-          particle.className = "hero-particle";
-          particle.style.width = Math.random() * 10 + 5 + "px"; // Random size between 5px and 15px
-          particle.style.height = particle.style.width;
-          particle.style.left = Math.random() * 100 + "%";
-          particle.style.top = Math.random() * 100 + "%";
-          particle.style.animationDelay = Math.random() * 10 + "s";
-          particle.style.animationDuration = Math.random() * 10 + 10 + "s"; // Longer animation duration
-          heroParticlesContainer.appendChild(particle);
-        }
-      }
-
-      // Create hero skill tags
-      function createHeroSkillTags() {
-        const heroSection = document.querySelector(".hero");
-        const skills = [
-          "Dart",
-          "Flutter",
-          "JavaScript",
-          "React.js",
-          "Node.js",
-          "Firebase",
-          "Git",
-          "Postman",
-          "Figma",
-          "REST API",
-          "Responsive Design",
-          "Technical Writing",
-        ];
-
-        skills.forEach((skill, index) => {
-          const skillTag = document.createElement("div");
-          skillTag.className = "hero-skill-tag";
-          skillTag.textContent = skill;
-
-          // Random positioning and animation delay
-          skillTag.style.left = Math.random() * 100 + "%";
-          skillTag.style.top = Math.random() * 100 + "%";
-          skillTag.style.animationDelay = Math.random() * 10 + "s";
-          skillTag.style.animationDuration = Math.random() * 15 + 10 + "s";
-
-          heroSection.appendChild(skillTag);
+      // Close mobile menu when clicking on a link
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-times");
         });
-      }
-
-      // Create hero skill tags
-      function createHeroSkillTags() {
-        const heroSection = document.querySelector(".hero");
-        const skills = [
-          "Dart",
-          "Flutter",
-          "JavaScript",
-          "React.js",
-          "Node.js",
-          "Firebase",
-          "Git",
-          "Postman",
-          "Figma",
-          "REST API",
-          "Responsive Design",
-          "Technical Writing",
-        ];
-
-        skills.forEach((skill, index) => {
-          const skillTag = document.createElement("div");
-          skillTag.className = "hero-skill-tag";
-          skillTag.textContent = skill;
-
-          // Random positioning and animation delay
-          skillTag.style.left = Math.random() * 100 + "%";
-          skillTag.style.top = Math.random() * 100 + "%";
-          skillTag.style.animationDelay = Math.random() * 10 + "s";
-          skillTag.style.animationDuration = Math.random() * 15 + 10 + "s";
-
-          heroSection.appendChild(skillTag);
-        });
-      }
+      });
 
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -772,116 +1415,36 @@
           e.preventDefault();
           const target = document.querySelector(this.getAttribute("href"));
           if (target) {
-            target.scrollIntoView({
+            const headerHeight = 80;
+            const targetPosition = target.offsetTop - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
               behavior: "smooth",
-              block: "start",
             });
           }
         });
       });
 
       // Header scroll effect
+      let lastScrollY = window.scrollY;
+      const header = document.querySelector(".header");
+
       window.addEventListener("scroll", () => {
-        const header = document.querySelector("header");
-        if (window.scrollY > 100) {
-          header.style.background = "rgba(0, 0, 0, 0.95)";
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 100) {
+          header.style.background = "rgba(15, 23, 42, 0.95)";
+          header.style.borderBottom = "1px solid rgba(79, 70, 229, 0.3)";
         } else {
-          header.style.background = "rgba(0, 0, 0, 0.9)";
+          header.style.background = "rgba(15, 23, 42, 0.8)";
+          header.style.borderBottom = "1px solid rgba(148, 163, 184, 0.1)";
         }
+
+        lastScrollY = currentScrollY;
       });
 
-      // Timeline animation
-      const timelineObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate");
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-
-      document.querySelectorAll(".timeline-item").forEach((item) => {
-        timelineObserver.observe(item);
-      });
-
-      // Add staggered animation for skills
-      const skillTags = document.querySelectorAll(".skill-tag");
-      skillTags.forEach((skill, index) => {
-        skill.style.opacity = "0";
-        skill.style.transform = "translateY(20px)";
-        skill.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-
-        setTimeout(() => {
-          skill.style.opacity = "1";
-          skill.style.transform = "translateY(0)";
-        }, index * 100);
-      });
-
-      // Add pulse animation to skill icons on scroll
-      const skillObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const icons = entry.target.querySelectorAll(
-                ".skill-tag img.skill-logo"
-              );
-              icons.forEach((icon, index) => {
-                setTimeout(() => {
-                  icon.style.animation = "pulse 0.6s ease-in-out";
-                }, index * 100);
-              });
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-
-      const skillsSection = document.querySelector(".skills");
-      if (skillsSection) {
-        skillObserver.observe(skillsSection);
-      }
-
-      // Project filtering logic
-      const filterButtons = document.querySelectorAll(".filter-button");
-      const projectCards = document.querySelectorAll(".project-card");
-
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          filterButtons.forEach((btn) => btn.classList.remove("active"));
-          button.classList.add("active");
-
-          const filter = button.dataset.filter;
-
-          projectCards.forEach((card) => {
-            if (filter === "all" || card.classList.contains(filter)) {
-              card.style.display = "flex";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // Add pulse keyframes
-      const style = document.createElement("style");
-      style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.2); }
-                100% { transform: scale(1); }
-            }
-        `;
-      document.head.appendChild(style);
-
-      // Initialize particles when page loads
-      document.addEventListener("DOMContentLoaded", () => {
-        createParticles();
-        createHeroSkillTags(); // Initialize hero skill tags
-      });
-
-      // Add intersection observer for scroll animations
+      // Intersection Observer for animations
       const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px",
@@ -890,53 +1453,148 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
+            entry.target.classList.add("animate");
           }
         });
       }, observerOptions);
 
-      // Certifications Carousel
-      const slides = document.querySelector(".carousel-slides");
-      const slide = document.querySelectorAll(".carousel-slide");
-      const prevBtn = document.querySelector(".carousel-prev");
-      const nextBtn = document.querySelector(".carousel-next");
+      // Observe elements for animation
+      document.querySelectorAll(".fade-in, .timeline-item").forEach((el) => {
+        observer.observe(el);
+      });
 
-      let currentIndex = 0;
+      // Project filtering
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
 
-      function showSlide(index) {
-        slides.style.transform = `translateX(${-index * 100}%)`;
-        slide.forEach((s, i) => {
-          s.classList.toggle("active", i === index);
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          // Add active class to clicked button
+          button.classList.add("active");
+
+          const filter = button.getAttribute("data-filter");
+
+          projectCards.forEach((card) => {
+            if (filter === "all" || card.classList.contains(filter)) {
+              card.style.display = "block";
+              setTimeout(() => {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+              }, 100);
+            } else {
+              card.style.opacity = "0";
+              card.style.transform = "translateY(20px)";
+              setTimeout(() => {
+                card.style.display = "none";
+              }, 300);
+            }
+          });
         });
+      });
+
+      // Add cursor glow effect
+      const cursor = document.createElement("div");
+      cursor.classList.add("cursor-glow");
+      document.body.appendChild(cursor);
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      });
+
+      // Enhanced hover effects for interactive elements
+      document
+        .querySelectorAll("a, button, .project-card, .skill-item")
+        .forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            cursor.classList.add("hovered");
+          });
+
+          el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("hovered");
+          });
+        });
+
+      // Typing effect for hero subtitle (optional enhancement)
+      const subtitle = document.querySelector(".hero-content .subtitle");
+      if (subtitle) {
+        const text = subtitle.textContent;
+        subtitle.textContent = "";
+        subtitle.style.opacity = "1";
+
+        let i = 0;
+        const typeWriter = () => {
+          if (i < text.length) {
+            subtitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 30);
+          }
+        };
+
+        // Start typing effect after a delay
+        setTimeout(typeWriter, 1500);
       }
 
-      prevBtn.addEventListener("click", () => {
-        currentIndex = currentIndex > 0 ? currentIndex - 1 : slide.length - 1;
-        showSlide(currentIndex);
+      // Enhanced scroll reveal animations
+      const revealElements = document.querySelectorAll(
+        ".glass-card, .skill-item"
+      );
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }, index * 100);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      revealElements.forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.6s ease";
+        revealObserver.observe(el);
       });
 
-      nextBtn.addEventListener("click", () => {
-        currentIndex = currentIndex < slide.length - 1 ? currentIndex + 1 : 0;
-        showSlide(currentIndex);
-      });
-
-      // Observe all sections for animations
-      document.querySelectorAll("section").forEach((section) => {
-        section.style.opacity = "0";
-        section.style.transform = "translateY(20px)";
-        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-        observer.observe(section);
-      });
-
-      // Hamburger Menu
-      const hamburger = document.querySelector(".hamburger");
-      const navLinks = document.querySelector(".nav-links");
-
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
+      // Add CSS for cursor glow if not already added
+      if (!document.querySelector("#cursor-styles")) {
+        const cursorStyles = document.createElement("style");
+        cursorStyles.id = "cursor-styles";
+        cursorStyles.textContent = `
+                .cursor-glow {
+                    position: fixed;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(79, 70, 229, 0.3);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    transform: translate(-50%, -50%);
+                    transition: all 0.1s ease;
+                    z-index: 9999;
+                    mix-blend-mode: difference;
+                }
+                
+                .cursor-glow.hovered {
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(79, 70, 229, 0.2);
+                }
+                
+                @media (max-width: 768px) {
+                    .cursor-glow {
+                        display: none;
+                    }
+                }
+            `;
+        document.head.appendChild(cursorStyles);
+      }
     </script>
   </body>
 </html>
