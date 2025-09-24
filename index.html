@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Md Siamul Islam Soaib - Flutter Developer</title>
+    <title>Siam - Software Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Md Siamul Islam Soaib - Application & Software Developer"
+    />
+    <meta
+      name="keywords"
+      content="Software Developer, Application Developer, Flutter Developer, Portfolio, Md Siamul Islam Soaib"
+    />
+    <meta name="author" content="Md Siamul Islam Soaib" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/256/3541/3541254.png"
+      type="image/x-icon"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
@@ -406,6 +420,241 @@
         color: #64ffda;
         font-size: 0.9rem;
         line-height: 1.6;
+      }
+
+      /* TESTIMONIALS SECTION - MODULAR CODE STARTS HERE */
+      .testimonials-section {
+        padding: 5rem 0;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .testimonials-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-1);
+        border-radius: 2px;
+      }
+
+      .testimonials-marquee {
+        position: relative;
+        overflow: hidden;
+        padding: 2rem 0;
+      }
+
+      .testimonials-track {
+        display: flex;
+        gap: 2rem;
+        animation: marquee 30s linear infinite;
+        width: fit-content;
+      }
+
+      .testimonials-track:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .testimonial-card {
+        flex: 0 0 400px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(79, 70, 229, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 1rem;
+        left: 1.5rem;
+        font-size: 4rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        opacity: 0.3;
+        line-height: 1;
+      }
+
+      .client-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .client-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--glass-border);
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover .client-avatar {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+      }
+
+      .client-details {
+        flex: 1;
+      }
+
+      .client-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.25rem;
+      }
+
+      .client-role {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+      }
+
+      .rating {
+        display: flex;
+        gap: 0.25rem;
+      }
+
+      .star {
+        color: var(--accent-color);
+        font-size: 1rem;
+      }
+
+      .star.empty {
+        color: var(--text-muted);
+        opacity: 0.3;
+      }
+
+      .review-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        position: relative;
+        z-index: 2;
+      }
+
+      .project-tag {
+        display: inline-block;
+        background: rgba(79, 70, 229, 0.2);
+        color: var(--primary-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+      }
+
+      /* Gradient overlay for fade effect */
+      .testimonials-marquee::before,
+      .testimonials-marquee::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      .testimonials-marquee::before {
+        left: 0;
+        background: linear-gradient(
+          90deg,
+          var(--bg-primary) 0%,
+          transparent 100%
+        );
+      }
+
+      .testimonials-marquee::after {
+        right: 0;
+        background: linear-gradient(
+          270deg,
+          var(--bg-primary) 0%,
+          transparent 100%
+        );
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .testimonial-card {
+          flex: 0 0 320px;
+          padding: 1.5rem;
+        }
+
+        .client-avatar {
+          width: 50px;
+          height: 50px;
+        }
+
+        .testimonials-track {
+          gap: 1.5rem;
+        }
+      }
+
+      /* Alternative: Multiple rows for more content */
+      .testimonials-multi-row {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .testimonials-row {
+        display: flex;
+        gap: 2rem;
+        animation: marquee-row 25s linear infinite;
+        width: fit-content;
+      }
+
+      .testimonials-row:nth-child(even) {
+        animation-direction: reverse;
+        animation-duration: 35s;
+      }
+
+      @keyframes marquee-row {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
       }
 
       /* Skills Section */
@@ -836,10 +1085,11 @@
     <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero-content fade-in">
-        <h1>Flutter Developer & Problem Solver</h1>
+        <h1>Application & Software Developer</h1>
         <p class="subtitle">
-          Transforming ideas into beautiful, functional mobile applications with
-          2+ years of experience in Flutter development
+          I love creating software that works seamlessly across platforms —
+          functional, beautiful, and built to solve real problems. Over 2+ years
+          of experience in Flutter and modern development tools.
         </p>
         <div class="cta-buttons">
           <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -859,16 +1109,17 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I'm a passionate Flutter Developer and Computer Science Engineering
-            student with a deep love for creating innovative mobile
-            applications. With 2+ years of hands-on experience, I specialize in
-            building user-friendly, performance-optimized apps that solve
-            real-world problems.
-          </p>
-          <p>
-            Currently pursuing my degree in Computer Science Engineering at
-            Dhaka International University, I'm dedicated to staying at the
-            forefront of mobile development technologies and best practices.
+            I’m a passionate
+            <strong>Software & Application Developer</strong> and
+            <strong>CSE student</strong> with
+            <strong>2+ years of hands-on experience</strong> building
+            <strong>user-friendly, performance-optimized apps</strong> using
+            Flutter and modern tools. Currently pursuing my degree at
+            <strong>Dhaka International University</strong>, I stay committed to
+            <strong>continuous learning</strong> and the latest
+            <strong>cross-platform technologies</strong>. I enjoy solving
+            real-world problems, delivering polished products, and collaborating
+            on impactful, <strong>scalable, future-ready solutions</strong>.
           </p>
 
           <div class="stats-grid">
@@ -877,7 +1128,7 @@
               <div>Years Experience</div>
             </div>
             <div class="stat-item glass-card">
-              <div class="stat-number">10+</div>
+              <div class="stat-number">100+</div>
               <div>Projects Completed</div>
             </div>
             <div class="stat-item glass-card">
@@ -939,6 +1190,166 @@
       </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION - COPY FROM HERE -->
+    <section class="testimonials-section">
+      <div class="testimonials-container">
+        <h2 class="section-title">Client Testimonials</h2>
+
+        <div class="testimonials-marquee">
+          <div class="testimonials-track">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <div class="client-info">
+                <img
+                  src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/129_Fiverr_logo_logos-512.png"
+                  alt="John Smith"
+                  class="client-avatar"
+                />
+                <div class="client-details">
+                  <div class="client-name">tradkings</div>
+                  <div class="client-role">Nigeria</div>
+                  <div class="rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="review-text">
+                seller is a great guy, did work as expected. communication is
+                perfect and always ready to do as you say. i recommend him. His
+                work is excellent !!!
+              </div>
+              <div class="project-tag">Mobile App</div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="client-info">
+                <img
+                  src="https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar13-512.png"
+                  alt="Sarah Johnson"
+                  class="client-avatar"
+                />
+                <div class="client-details">
+                  <div class="client-name">Abdul Motin Faruki</div>
+                  <div class="client-role">App User</div>
+                  <div class="rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="review-text">
+                IOM Daily Azkar is a simple yet powerful Islamic app that helps
+                you stay connected to daily dhikr and essential duas. Its clean
+                interface, authentic content from Qur’an and Hadith, and helpful
+                features like fatwa support and prayer-restricted times make it
+                a must-have for every Muslim. A true spiritual companion.
+              </div>
+              <div class="project-tag">IOM Daily Azkar</div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="client-info">
+                <img
+                  src="https://png.pngtree.com/png-clipart/20221231/ourmid/pngtree-muslim-women-wear-the-syar-i-niqab-with-a-blue-background-png-image_6546143.png"
+                  alt="Sarah Johnson"
+                  class="client-avatar"
+                />
+                <div class="client-details">
+                  <div class="client-name">Sharmin Shimu</div>
+                  <div class="client-role">App User</div>
+                  <div class="rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="review-text">
+                আসসালামু আ'লাইকুম ওয়া রহমাতুল্লাহি ওয়া বারাকাতুহ। IOM এর এ্যাপ
+                দেখেই তাড়াতাড়ি ইন্সটল করে নিলাম 😕 এ্যাপটি ঘুরে দেখলাম। অনেক
+                সুন্দর করে সব কিছু সাজানো গোছানো মা শা আল্লাহ। সকাল সন্ধ্যার
+                যিকির, নামাজের সময়, অন্যান্য সব কিছুই খুব সুন্দর করে সাজানো।
+                চাইলে আপনারাও ব্যবহার করে দেখতে পারেন। আশা করি ভালো লাগবে এবং
+                উপকারে আসবে ইন শা আল্লাহ।.
+              </div>
+              <div class="project-tag">IOM Daily Azkar</div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="client-info">
+                <img
+                  src="https://play-lh.googleusercontent.com/a-/ALV-UjVR1nqeCf7AP7GPfZiHyzJKkzkbAuSZbcAM_YOUI_BjQTuohuc=s32-rw"
+                  alt="Sarah Johnson"
+                  class="client-avatar"
+                />
+                <div class="client-details">
+                  <div class="client-name">SMd Kamrul Islam</div>
+                  <div class="client-role">App User</div>
+                  <div class="rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="review-text">
+                A Must-Have Islamic Learning App! Marsus EduVerse - Read & Learn
+                is a beautifully designed app that brings together a rich
+                collection of e-books, lectures, and blogs in one place. Whether
+                you're looking to deepen your Islamic knowledge or just want
+                access to authentic, well-curated content, this app is a true
+                gem.
+              </div>
+              <div class="project-tag">Marsus EduVerse - Read & Learn</div>
+            </div>
+
+            <!-- Duplicate testimonials for seamless loop -->
+            <div class="testimonial-card">
+              <div class="client-info">
+                <img
+                  src="https://cdn3.iconfinder.com/data/icons/avatar-set/512/Avatar13-512.png"
+                  alt="Sarah Johnson"
+                  class="client-avatar"
+                />
+                <div class="client-details">
+                  <div class="client-name">Abdul Motin Faruki</div>
+                  <div class="client-role">App User</div>
+                  <div class="rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="review-text">
+                IOM Daily Azkar is a simple yet powerful Islamic app that helps
+                you stay connected to daily dhikr and essential duas. Its clean
+                interface, authentic content from Qur’an and Hadith, and helpful
+                features like fatwa support and prayer-restricted times make it
+                a must-have for every Muslim. A true spiritual companion.
+              </div>
+              <div class="project-tag">IOM Daily Azkar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TESTIMONIALS SECTION - COPY UNTIL HERE -->
+
     <!-- Skills Section -->
     <section id="skills" class="section fade-in">
       <h2 class="section-title">Technical Skills</h2>
@@ -947,20 +1358,60 @@
           <h3><i class="fas fa-code"></i> Programming Languages</h3>
           <div class="skill-items">
             <div class="skill-item">
-              <div class="skill-icon">🎯</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Dart_programming_language_logo_icon.svg/2048px-Dart_programming_language_logo_icon.svg.png"
+                  alt="Dart"
+                />
+              </div>
               <div>Dart</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">⚡</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                  alt="JavaScript"
+                />
+              </div>
               <div>JavaScript</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">☕</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
+                  alt="Java"
+                />
+              </div>
               <div>Java</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">🔥</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg"
+                  alt="C"
+                />
+              </div>
               <div>C</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fas fa-database"></i> Database</h3>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://pngimg.com/d/mysql_PNG9.png"
+                  alt="MySQL"
+                />
+              </div>
+              <div>MySQL</div>
             </div>
           </div>
         </div>
@@ -969,19 +1420,43 @@
           <h3><i class="fas fa-mobile-alt"></i> Frameworks & Tools</h3>
           <div class="skill-items">
             <div class="skill-item">
-              <div class="skill-icon">📱</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://img.icons8.com/color/512/flutter.png"
+                  alt="Flutter"
+                />
+              </div>
               <div>Flutter</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">⚛️</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                  alt="React"
+                />
+              </div>
               <div>React.js</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">🌐</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+                  alt="Node.js"
+                />
+              </div>
               <div>Node.js</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">🔥</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png"
+                  alt="Firebase"
+                />
+              </div>
               <div>Firebase</div>
             </div>
           </div>
@@ -991,42 +1466,44 @@
           <h3><i class="fas fa-tools"></i> Development Tools</h3>
           <div class="skill-items">
             <div class="skill-item">
-              <div class="skill-icon">🔧</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png"
+                  alt="GitHub"
+                />
+              </div>
               <div>Git/GitHub</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">📮</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png"
+                  alt="Postman"
+                />
+              </div>
               <div>Postman</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">🎨</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/960px-Figma-logo.svg.png"
+                  alt="Figma"
+                />
+              </div>
               <div>Figma</div>
             </div>
             <div class="skill-item">
-              <div class="skill-icon">📱</div>
+              <div class="skill-icon">
+                <img
+                  style="width: 40px; height: 40px"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/2101px-Adobe_XD_CC_icon.svg.png"
+                  alt="Adobe XD"
+                />
+              </div>
               <div>Adobe XD</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3><i class="fas fa-rocket"></i> Other Expertise</h3>
-          <div class="skill-items">
-            <div class="skill-item">
-              <div class="skill-icon">🌐</div>
-              <div>RESTful APIs</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">📱</div>
-              <div>Responsive Design</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">✍️</div>
-              <div>Technical Writing</div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">⚡</div>
-              <div>CI/CD</div>
             </div>
           </div>
         </div>
