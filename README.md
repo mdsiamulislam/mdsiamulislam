@@ -65,6 +65,11 @@ Become a highly skilled **Full Stack Mobile Developer**, mastering Flutter archi
 
 ---
 
+---
+### 📚 Currently Learning
+<img src="https://img.shields.io/badge/Data_Structures-00599C?style=flat-square"/> <img src="https://img.shields.io/badge/Algorithms-FF6F00?style=flat-square"/> <img src="https://img.shields.io/badge/System_Design-000000?style=flat-square"/> <img src="https://img.shields.io/badge/Operating_Systems-8E44AD?style=flat-square"/> <img src="https://img.shields.io/badge/Computer_Networks-16A085?style=flat-square"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square"/> <img src="https://img.shields.io/badge/AI_Integration-FF4B4B?style=flat-square"/>
+---
+
 ## 🤝 Let's Connect!
 
 <p align="center">
