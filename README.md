@@ -46,25 +46,14 @@ Focus: Mobile Development, Software Engineering
 
 ## 🚀 Projects
 
-### Mobile
-- 🔐 [AndroidPixEnc](https://github.com/mdsiamulislam/AndroidPixEnc)  
-  Image encryption app using pixel manipulation and multiple algorithms.
-
-- 🌐 [Marsus EduVerse](https://github.com/mdsiamulislam/Marsus-EduVerse)  
-  Flutter app for Islamic learning (Books, lectures, blogs).
-
-### Web
-- 📘 [C Programming Learn](https://cprogramminglearn.netlify.app/)  
-  Interactive website for learning C programming.
-- 🌐 [DIU CSE Alumni Website](https://csediualumni.com/)  
-  React/Node.js based alumni portal for Dhaka International University.
-
-### Others
-- 🧠 [What about C](https://github.com/mdsiamulislam/What-about-C)  
-  Collection of C programming topics and solutions.
-
-- 🛠 [Git Operations](https://github.com/mdsiamulislam/Git-operations)  
-  Practice repository for Git commands.
+| Category | Project | Description | Link |
+|--------|--------|-------------|------|
+| 📱 Mobile | AndroidPixEnc | Image encryption app using pixel manipulation and multiple algorithms | [GitHub](https://github.com/mdsiamulislam/AndroidPixEnc) |
+| 📱 Mobile | Marsus EduVerse | Flutter app for Islamic learning (Books, lectures, blogs) | [GitHub](https://github.com/mdsiamulislam/Marsus-EduVerse) |
+| 🌐 Web | C Programming Learn | Interactive website for learning C programming | [Visit](https://cprogramminglearn.netlify.app/) |
+| 🌐 Web | DIU CSE Alumni Website | React/Node.js based alumni portal for Dhaka International University | [Visit](https://csediualumni.com/) |
+| 🧠 Others | What about C | Collection of C programming topics and solutions | [GitHub](https://github.com/mdsiamulislam/What-about-C) |
+| 🛠 Others | Git Operations | Practice repository for Git commands | [GitHub](https://github.com/mdsiamulislam/Git-operations) |
 
 ---
 
